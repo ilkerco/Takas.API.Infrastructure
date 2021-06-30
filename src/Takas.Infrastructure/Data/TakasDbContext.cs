@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -13,7 +14,7 @@ using Takas.Core.Model.Interfaces;
 
 namespace Takas.Infrastructure.Data
 {
-    public class TakasDbContext : DbContext
+    public class TakasDbContext : IdentityDbContext<User>
     {
         private static IHttpContextAccessor _httpContextAccessor;
         public static HttpContext CurrentHttpContext => _httpContextAccessor.HttpContext;
@@ -26,6 +27,7 @@ namespace Takas.Infrastructure.Data
 
         #region ConfigureDb
         public DbSet<Product> Product { get; set; }
+        public DbSet<Category> Category { get; set; }
         #endregion
         #region ConfigureFluentApi
         protected override void OnModelCreating(ModelBuilder builder)
@@ -41,7 +43,7 @@ namespace Takas.Infrastructure.Data
         }
         public void ConfigureProduct(EntityTypeBuilder<Product> builder)
         {
-            //builder.HasOne(x => x.OwnerId);
+            builder.HasOne(x => x.Owner);
             //builder.HasIndex(prop => prop.Title).IsUnique();
         }
         #endregion

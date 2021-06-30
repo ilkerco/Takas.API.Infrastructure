@@ -9,5 +9,7 @@ namespace Takas.Core.Model.Entities
         public string Title { get; set; }
         public string Description { get; set; }
         public string OwnerId { get; set; }
+        public virtual User Owner { get; set; }
+        public int Price { get; set; }
     }
 }
