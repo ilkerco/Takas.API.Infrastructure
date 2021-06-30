@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "aQjKm3EcQEuuFrF2EeYg8X10mrfo8kcyRGYZi7m7iowWHN+mRDR9sY25AdUxnQyj3SOITCjDxgyXtB+ouWchQg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ilker\\source\\repos\\Takas.API.Infrastructure\\src\\Takas.Core\\Takas.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ilker\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ilker\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
