@@ -1,0 +1,9 @@
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Core\bin\Debug\netstandard2.1\Takas.Core.deps.json
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Core\bin\Debug\netstandard2.1\Takas.Core.dll
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Core\bin\Debug\netstandard2.1\Takas.Core.pdb
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Core\obj\Debug\netstandard2.1\Takas.Core.csprojAssemblyReference.cache
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Core\obj\Debug\netstandard2.1\Takas.Core.AssemblyInfoInputs.cache
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Core\obj\Debug\netstandard2.1\Takas.Core.AssemblyInfo.cs
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Core\obj\Debug\netstandard2.1\Takas.Core.csproj.CoreCompileInputs.cache
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Core\obj\Debug\netstandard2.1\Takas.Core.dll
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Core\obj\Debug\netstandard2.1\Takas.Core.pdb
