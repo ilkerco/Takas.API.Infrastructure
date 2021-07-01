@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Takas.Core.Model.Entities;
 using Takas.WebApi.Dto;
+using Takas.WebApi.Models;
 using Takas.WebApi.Services.Interfaces;
 
 namespace Takas.WebApi.Controllers
@@ -22,18 +23,21 @@ namespace Takas.WebApi.Controllers
         private readonly SignInManager<User> _signInManager;
         private readonly IAuthHelper _authHelper;
         private readonly IMapper _mapper;
+        private readonly ILoginService _loginService;
 
         public AuthController(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
             IAuthHelper authHelper,
-            IMapper mapper
+            IMapper mapper,
+            ILoginService loginService
             )
         {
             _authHelper = authHelper;
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
+            _loginService = loginService;
         }
 
         [HttpPost("register")]
@@ -84,6 +88,30 @@ namespace Takas.WebApi.Controllers
             {
                 return BadRequest();
             }
+        }
+        [HttpPost("google")]
+        public async Task<IActionResult> GoogleLogin([FromBody] SocialLoginRequest request)
+        {
+            var authResponse = await _loginService.LoginWithGoogleAsync(request);
+            if (!authResponse.Success)
+            {
+                return BadRequest(authResponse.Errors);
+            }
+
+
+            return Ok(authResponse.Token);
+        }
+        [HttpPost("facebook")]
+        public async Task<IActionResult> FaceebookLogin([FromBody] SocialLoginRequest request)
+        {
+            var authResponse = await _loginService.LoginWithFacebookAsync(request);
+            if (!authResponse.Success)
+            {
+                return BadRequest(authResponse.Errors);
+            }
+
+
+            return Ok(authResponse.Token);
         }
     }
 }

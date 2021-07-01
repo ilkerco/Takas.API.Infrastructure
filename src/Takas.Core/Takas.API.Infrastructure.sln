@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Takas.Core", "Takas.Core.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Takas.Infrastructure", "..\Takas.Infrastructure\Takas.Infrastructure.csproj", "{17174D02-0131-4BF4-B9D3-784A41C26A0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Takas.WebApi", "..\Takas.WebApi\Takas.WebApi.csproj", "{7674EFC1-840D-44DF-9E95-F6031C377D6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Takas.WebApi", "..\Takas.WebApi\Takas.WebApi.csproj", "{7674EFC1-840D-44DF-9E95-F6031C377D6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

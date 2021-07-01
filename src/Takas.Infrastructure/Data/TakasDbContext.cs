@@ -28,6 +28,7 @@ namespace Takas.Infrastructure.Data
         #region ConfigureDb
         public DbSet<Product> Product { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<ProductImage> ProductImage { get; set; }
         #endregion
         #region ConfigureFluentApi
         protected override void OnModelCreating(ModelBuilder builder)
@@ -44,6 +45,7 @@ namespace Takas.Infrastructure.Data
         public void ConfigureProduct(EntityTypeBuilder<Product> builder)
         {
             builder.HasOne(x => x.Owner);
+            builder.HasOne(x => x.Category);
             //builder.HasIndex(prop => prop.Title).IsUnique();
         }
         #endregion

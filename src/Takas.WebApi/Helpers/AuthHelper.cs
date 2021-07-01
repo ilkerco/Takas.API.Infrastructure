@@ -33,7 +33,7 @@ namespace Takas.WebApi.Helpers
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(claims),
-                    Expires = DateTime.Now.AddHours(1),
+                    Expires = DateTime.Now.AddDays(365),
                     SigningCredentials = credentials,
 
                 };

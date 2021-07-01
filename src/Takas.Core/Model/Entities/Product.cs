@@ -11,5 +11,8 @@ namespace Takas.Core.Model.Entities
         public string OwnerId { get; set; }
         public virtual User Owner { get; set; }
         public int Price { get; set; }
+        public int CategoryId { get; set; }
+        public virtual List<ProductImage> Images { get; set; }
+        public Category Category { get; set; }
     }
 }

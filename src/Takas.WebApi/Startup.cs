@@ -16,12 +16,18 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Takas.Core.Model.Entities;
+using Takas.Core.Services.Interfaces;
 using Takas.Infrastructure.Data;
+using Takas.Infrastructure.Services;
 using Takas.WebApi.Helpers;
+using Takas.WebApi.Services.DataServices;
+using Takas.WebApi.Services.DataServices.External;
 using Takas.WebApi.Services.Interfaces;
+using Takas.WebApi.Services.Interfaces.External;
 
 namespace Takas.WebApi
 {
@@ -32,7 +38,7 @@ namespace Takas.WebApi
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
+            services.AddHttpClient();
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1",
@@ -78,7 +84,8 @@ namespace Takas.WebApi
             services.TryAddScoped<UserManager<User>>();
             services.TryAddScoped<SignInManager<User>>();
             services.AddDbContext<TakasDbContext>(options =>
-                options.UseSqlServer("Server=DESKTOP-12403TV\\SQLEXPRESS;Database=Takas;Trusted_Connection=True;MultipleActiveResultSets=true"));
+                options.UseSqlServer("Server = 45.158.14.59; Database = TakasDB; User ID = ilker8118; Password = i.S07051997352435; MultipleActiveResultSets = True"));
+            //options.UseSqlServer("Server=DESKTOP-12403TV\\SQLEXPRESS;Database=Takas;Trusted_Connection=True;MultipleActiveResultSets=true"));
             
             services.TryAddSingleton<ISystemClock, SystemClock>();
             services.AddAuthentication(options =>
@@ -97,10 +104,20 @@ namespace Takas.WebApi
                     ValidateAudience = false
                 };
             });
+
+
             var builder = new ContainerBuilder();
 
             builder.RegisterType<AuthHelper>().As<IAuthHelper>();
-
+            builder.RegisterType<ProductService>().As<IProductService>();
+            builder.RegisterType<UserService>().As<IUserService>();
+            builder.RegisterType<TakasDataService>().As<ITakasDataServices>();
+            builder.RegisterType<CategoryService>().As<ICategoryService>();
+            builder.RegisterType<ProductImageService>().As<IProductImageService>();
+            builder.RegisterType<LoginService>().As<ILoginService>();
+            builder.RegisterType<FacebookAuthService>().As<IFacebookAuthService>();
+            builder.RegisterType<GoogleAuthService>().As<IGoogleAuthService>();
+            
             builder.Populate(services);
 
             var appContainer = builder.Build();
@@ -116,6 +133,7 @@ namespace Takas.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseStaticFiles();
             app.UseAuthentication();
             app.UseRouting();
             app.UseAuthorization();
