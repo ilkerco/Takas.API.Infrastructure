@@ -119,7 +119,7 @@ namespace Takas.WebApi.Services.DataServices
             {
                 var category = _categoryService.Find(x => x.Name == product.Category);
                 var currentUserId = _userService.GetCurrentUser();
-                var entity = await _productService.GetAsync(id);
+                var entity = await _productService.GetAll().Include(x=>x.Images).Where(x=>x.Id == id).SingleOrDefaultAsync();
                 if (entity.OwnerId != currentUserId || entity == null)
                     return null;
                 entity.Description = product.Description;
