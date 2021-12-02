@@ -1,5 +1,14 @@
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Takas.WebApi.exe
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\2b2a57f1-c5b8-460f-bffa-0bf4d8ba9a8a.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\55e3b9df-be81-4d20-a5a4-6c0a0783c213.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\5b871a37-5a73-4063-84f8-27e061313979.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\6033a0c2-d5ee-40da-88f8-b7c68e0d41ff.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\60f6f221-c807-4fbb-83a3-bbf9df3d4640.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\a759d8e0-7dbc-4e6f-909d-687f1e9e018f.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\c877828e-3861-4cc5-a68d-87494545ede8.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\d7a7621e-aca9-4dd0-bd82-91dd05999253.jpg
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\fbc05850-a827-4e5a-af0f-17a702445484.png
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\fcf96a0e-3ae0-45ab-b3f7-21c2b65f8b9a.jpg
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Takas.WebApi.dll

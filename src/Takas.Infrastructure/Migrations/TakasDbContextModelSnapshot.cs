@@ -177,6 +177,67 @@ namespace Takas.Infrastructure.Migrations
                     b.ToTable("Category");
                 });
 
+            modelBuilder.Entity("Takas.Core.Model.Entities.Chat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ChatName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FromId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("SuggestedProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TargetProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ToId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FromId");
+
+                    b.HasIndex("SuggestedProductId");
+
+                    b.HasIndex("TargetProductId");
+
+                    b.HasIndex("ToId");
+
+                    b.ToTable("Chats");
+                });
+
+            modelBuilder.Entity("Takas.Core.Model.Entities.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ChatId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ChatId");
+
+                    b.ToTable("Messages");
+                });
+
             modelBuilder.Entity("Takas.Core.Model.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -392,6 +453,46 @@ namespace Takas.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Takas.Core.Model.Entities.Chat", b =>
+                {
+                    b.HasOne("Takas.Core.Model.Entities.User", "From")
+                        .WithMany()
+                        .HasForeignKey("FromId");
+
+                    b.HasOne("Takas.Core.Model.Entities.Product", "SuggestedProduct")
+                        .WithMany()
+                        .HasForeignKey("SuggestedProductId");
+
+                    b.HasOne("Takas.Core.Model.Entities.Product", "TargetProduct")
+                        .WithMany()
+                        .HasForeignKey("TargetProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Takas.Core.Model.Entities.User", "To")
+                        .WithMany()
+                        .HasForeignKey("ToId");
+
+                    b.Navigation("From");
+
+                    b.Navigation("SuggestedProduct");
+
+                    b.Navigation("TargetProduct");
+
+                    b.Navigation("To");
+                });
+
+            modelBuilder.Entity("Takas.Core.Model.Entities.Message", b =>
+                {
+                    b.HasOne("Takas.Core.Model.Entities.Chat", "Chat")
+                        .WithMany("Messages")
+                        .HasForeignKey("ChatId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Chat");
+                });
+
             modelBuilder.Entity("Takas.Core.Model.Entities.Product", b =>
                 {
                     b.HasOne("Takas.Core.Model.Entities.Category", "Category")
@@ -412,12 +513,22 @@ namespace Takas.Infrastructure.Migrations
             modelBuilder.Entity("Takas.Core.Model.Entities.ProductImage", b =>
                 {
                     b.HasOne("Takas.Core.Model.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("Images")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Takas.Core.Model.Entities.Chat", b =>
+                {
+                    b.Navigation("Messages");
+                });
+
+            modelBuilder.Entity("Takas.Core.Model.Entities.Product", b =>
+                {
+                    b.Navigation("Images");
                 });
 #pragma warning restore 612, 618
         }

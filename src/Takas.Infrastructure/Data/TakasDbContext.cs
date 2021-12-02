@@ -29,6 +29,8 @@ namespace Takas.Infrastructure.Data
         public DbSet<Product> Product { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<ProductImage> ProductImage { get; set; }
+        public DbSet<Chat> Chats { get; set; }
+        public DbSet<Message> Messages { get; set; }
         #endregion
         #region ConfigureFluentApi
         protected override void OnModelCreating(ModelBuilder builder)

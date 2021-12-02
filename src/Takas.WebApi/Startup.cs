@@ -24,6 +24,7 @@ using Takas.Core.Services.Interfaces;
 using Takas.Infrastructure.Data;
 using Takas.Infrastructure.Services;
 using Takas.WebApi.Helpers;
+using Takas.WebApi.Hubs;
 using Takas.WebApi.Services.DataServices;
 using Takas.WebApi.Services.DataServices.External;
 using Takas.WebApi.Services.Interfaces;
@@ -37,8 +38,10 @@ namespace Takas.WebApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddControllers();
             services.AddHttpClient();
+            
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1",
@@ -85,7 +88,7 @@ namespace Takas.WebApi
             services.TryAddScoped<SignInManager<User>>();
             services.AddDbContext<TakasDbContext>(options =>
                 options.UseSqlServer("Server = 45.158.14.59; Database = TakasDB; User ID = ilker8118; Password = i.S07051997352435; MultipleActiveResultSets = True"));
-            //options.UseSqlServer("Server=DESKTOP-12403TV\\SQLEXPRESS;Database=Takas;Trusted_Connection=True;MultipleActiveResultSets=true"));
+             //options.UseSqlServer("Server=DESKTOP-12403TV\\SQLEXPRESS;Database=Takas;Trusted_Connection=True;MultipleActiveResultSets=true"));
             
             services.TryAddSingleton<ISystemClock, SystemClock>();
             services.AddAuthentication(options =>
@@ -104,6 +107,7 @@ namespace Takas.WebApi
                     ValidateAudience = false
                 };
             });
+            services.AddSignalR();
 
 
             var builder = new ContainerBuilder();
@@ -111,6 +115,8 @@ namespace Takas.WebApi
             builder.RegisterType<AuthHelper>().As<IAuthHelper>();
             builder.RegisterType<ProductService>().As<IProductService>();
             builder.RegisterType<UserService>().As<IUserService>();
+            builder.RegisterType<MessageService>().As<IMessageService>();
+            builder.RegisterType<ChatService>().As<IChatService>();
             builder.RegisterType<TakasDataService>().As<ITakasDataServices>();
             builder.RegisterType<CategoryService>().As<ICategoryService>();
             builder.RegisterType<ProductImageService>().As<IProductImageService>();
@@ -133,16 +139,27 @@ namespace Takas.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChatHub>("/chatHub");
+            });
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger Demo Api");
             });
+            
+
+
         }
     }
 }
