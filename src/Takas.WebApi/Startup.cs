@@ -91,8 +91,8 @@ namespace Takas.WebApi
             services.TryAddScoped<UserManager<User>>();
             services.TryAddScoped<SignInManager<User>>();
             services.AddDbContext<TakasDbContext>(options =>
-                options.UseSqlServer("Server = 45.200.120.200; Database = TakasDb; User ID = ilker8118; Password = i.S07051997352435; MultipleActiveResultSets = True"));
-             //options.UseSqlServer("Server=DESKTOP-12403TV\\SQLEXPRESS;Database=Takas;Trusted_Connection=True;MultipleActiveResultSets=true"));
+               
+             options.UseSqlServer("Server=DESKTOP-12403TV\\SQLEXPRESS;Database=Takas;Trusted_Connection=True;MultipleActiveResultSets=true"));
             
             services.TryAddSingleton<ISystemClock, SystemClock>();
             services.AddAuthentication(options =>
