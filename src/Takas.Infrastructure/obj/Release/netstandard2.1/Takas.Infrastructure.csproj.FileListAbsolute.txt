@@ -3,10 +3,11 @@ C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\bi
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\bin\Release\netstandard2.1\Takas.Infrastructure.pdb
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\bin\Release\netstandard2.1\Takas.Core.dll
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\bin\Release\netstandard2.1\Takas.Core.pdb
-C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\obj\Release\netstandard2.1\Takas.Infrastructure.csprojAssemblyReference.cache
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\obj\Release\netstandard2.1\Takas.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\obj\Release\netstandard2.1\Takas.Infrastructure.AssemblyInfo.cs
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\obj\Release\netstandard2.1\Takas.Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\obj\Release\netstandard2.1\Takas.Infrastructure.csproj.CopyComplete
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\obj\Release\netstandard2.1\Takas.Infrastructure.dll
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\obj\Release\netstandard2.1\Takas.Infrastructure.pdb
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\obj\Release\netstandard2.1\Takas.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.Infrastructure\obj\Release\netstandard2.1\Takas.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig

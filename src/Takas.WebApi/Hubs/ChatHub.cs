@@ -9,9 +9,13 @@ namespace Takas.WebApi.Hubs
     public class ChatHub:Hub
     {
         public string GetConnectionId() => Context.ConnectionId;
-        public Task JoinRoom(string roomName)
+        public async Task JoinRoom(string roomName)
         {
-            return Groups.AddToGroupAsync(Context.ConnectionId, roomName);
+
+            await Groups.AddToGroupAsync(Context.ConnectionId, roomName);
+            //await Clients.Group(roomName).SendAsync("RecieveMessage", "ilkerr");
+           
         }
+        
     }
 }

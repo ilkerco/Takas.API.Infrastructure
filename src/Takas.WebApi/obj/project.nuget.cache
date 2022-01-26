@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iKkfU/vaTdJKJgBpuhSbJQhqoNNJzyfQmpGUxZxaViSoXloXJmTZpsg75cBtiSGYY+IKH4KX8yW4L8BLX+wYXA==",
+  "dgSpecHash": "YAJvGYbwy+gSGK6QXsyp1VzivQ9V3EBupXNBv+C3HwXtkp8OLuIllRdmu5CYp7gImYQIe/DjjMmhi430Wna7sg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ilker\\source\\repos\\Takas.API.Infrastructure\\src\\Takas.WebApi\\Takas.WebApi.csproj",
   "expectedPackageFiles": [
@@ -71,6 +71,7 @@
     "C:\\Users\\ilker\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\ilker\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\ilker\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\ilker\\.nuget\\packages\\sendgrid\\9.12.0\\sendgrid.9.12.0.nupkg.sha512",
     "C:\\Users\\ilker\\.nuget\\packages\\swashbuckle.aspnetcore\\6.1.4\\swashbuckle.aspnetcore.6.1.4.nupkg.sha512",
     "C:\\Users\\ilker\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.1.4\\swashbuckle.aspnetcore.swagger.6.1.4.nupkg.sha512",
     "C:\\Users\\ilker\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.1.4\\swashbuckle.aspnetcore.swaggergen.6.1.4.nupkg.sha512",

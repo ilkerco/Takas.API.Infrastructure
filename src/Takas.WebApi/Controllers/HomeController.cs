@@ -55,6 +55,13 @@ namespace Takas.WebApi.Controllers
             
             return Ok(user);
         }
+        [HttpGet("getProductById/{productId}")]
+        public async Task<IActionResult> GetUserById([FromRoute] int productId)
+        {
+            var user = await _takasDataService.GetProduct(productId);
+
+            return Ok(user);
+        }
         [HttpGet("getAllProducts")]
         public async Task<IActionResult> GetAllProducts()
         {
@@ -151,7 +158,7 @@ namespace Takas.WebApi.Controllers
         [Route("uploadImage")]
         public async Task<IActionResult> ImageUpload(List<IFormFile> files)
         {
-            string imgUrl = "https://ilkersargin.xyz/images/";
+            string imgUrl = "https://ilkersargin.site/images/";
             List<string> urlList = new List<string>();
             if (files == null)
             {

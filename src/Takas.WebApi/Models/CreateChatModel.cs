@@ -10,6 +10,8 @@ namespace Takas.WebApi.Models
         public int TargetProductId { get; set; }
         public int? SuggestedProductId { get; set; }
         public string ToId { get; set; }
+        public string ConnectionId { get; set; }
+        public string MessageText { get; set; }
 
     }
 }

@@ -8,7 +8,7 @@ namespace Takas.WebApi.Services.Interfaces
 {
     public interface ILoginService
     {
-
+        Task<AuthenticationResult> LoginWithEmailAndPassword(LoginWithEmailRequest request);
         Task<AuthenticationResult> LoginWithFacebookAsync(SocialLoginRequest request);
         Task<AuthenticationResult> LoginWithGoogleAsync(SocialLoginRequest request);
     }

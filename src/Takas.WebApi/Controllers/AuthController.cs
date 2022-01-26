@@ -24,13 +24,15 @@ namespace Takas.WebApi.Controllers
         private readonly IAuthHelper _authHelper;
         private readonly IMapper _mapper;
         private readonly ILoginService _loginService;
+        private readonly IUserService _userService;
 
         public AuthController(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
             IAuthHelper authHelper,
             IMapper mapper,
-            ILoginService loginService
+            ILoginService loginService,
+            IUserService userService
             )
         {
             _authHelper = authHelper;
@@ -38,55 +40,74 @@ namespace Takas.WebApi.Controllers
             _signInManager = signInManager;
             _mapper = mapper;
             _loginService = loginService;
+            _userService = userService;
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] UserRegisterDto userRegisterDto)
+        public async Task<IActionResult> Register([FromBody] LoginWithEmailRequest request)
         {
             try
             {
-                var userToCreate = _mapper.Map<User>(userRegisterDto);
-                var result = await _userManager.CreateAsync(userToCreate, userRegisterDto.Password);
-                if (result.Succeeded)
+                var user = await _userManager.FindByEmailAsync(request.Email);
+                if(user == null)
                 {
-                    var user =  _userManager.FindByNameAsync(userToCreate.UserName).Result;
-                    return Ok(user);
+                    var appUser = new User
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Email = request.Email,
+                        UserName = request.Email.Split('@')[0],
+                        Boost = 1,
+                        Latitude = 39.9333,
+                        Longitude = 32.8597,
+                        PhotoUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+                        SubAdminArea = "Ankara",
+                        Country = "Türkiye",
+                        
+                        Coin = 200,
+                        DisplayName = request.Email.Split('@')[0],
+
+                    };
+                    var createdResult = await _userManager.CreateAsync(appUser,request.Password);
+                    if (!createdResult.Succeeded)
+                    {
+                        return BadRequest(createdResult.Errors.First().Code);
+                    }
+                    return Ok(_authHelper.GenerateJwtToken(appUser).Result);
                 }
-                return BadRequest();
+                else
+                {
+                    return BadRequest("Bu e-posta zaten kayıtlı. Şifrenizi hatırlamıyorsanız şifremi unuttum kısmına tıklayın.");
+                }
+                
             }
             catch(Exception ex)
             {
-                return BadRequest();
+                return BadRequest("Kayıt olurken bilinmeyen hata.");
             }
         }
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] UserLoginDto userLoginDto)
+        public async Task<IActionResult> Login([FromBody] LoginWithEmailRequest request)
         {
             try
             {
-                var user = await _userManager.FindByNameAsync(userLoginDto.UserName);
+                var user = await _userManager.FindByEmailAsync(request.Email);
                 if (user == null)
                 {
-                    return BadRequest("There is no user with name " + userLoginDto.UserName);
+                    return BadRequest("E-posta adresiniz ve/veya şifreniz hatalı.");
                 }
-                var loginResult = await _signInManager.CheckPasswordSignInAsync(user, userLoginDto.Password, false);
+                var loginResult = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
                 if (!loginResult.Succeeded)
                 {
-                    return BadRequest("Wrong Password");
+                    return BadRequest("E-posta adresiniz ve/veya şifreniz hatalı.");
                 }
-                var appUser = await _userManager.Users.FirstOrDefaultAsync(
-                    u => u.NormalizedUserName == userLoginDto.UserName.ToUpper(CultureInfo.InvariantCulture));
-                var userToReturn = _mapper.Map<UserDto>(appUser);
-                //await _signInManager.SignInAsync(appUser, true);
-                return Ok(new
-                {
-                    token = _authHelper.GenerateJwtToken(appUser).Result,
-                    user =userToReturn,
-                });
+                
+                var userToReturn = _mapper.Map<UserDto>(user);
+                //await _signInManager.SignInAsync(user, true);
+                return Ok(_authHelper.GenerateJwtToken(user).Result);
             }
             catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
         [HttpPost("google")]
@@ -113,5 +134,35 @@ namespace Takas.WebApi.Controllers
 
             return Ok(authResponse.Token);
         }
+
+        [HttpPost("ForgetPassword")]
+        public async Task<IActionResult> ForgetPassword(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return NotFound();
+            }
+            var result = await _userService.ForgetPasswordAsync(email);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("resetpassword")]
+        public async Task<IActionResult> ResetPassword([FromForm]ResetPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _userService.ResetPasswordAsync(model);
+                if (result.IsSuccess)
+                {
+                    return Ok(result);
+                }
+                return BadRequest(result);
+            }
+            return BadRequest("Yanlış parametreler.");
+        }
+
     }
 }

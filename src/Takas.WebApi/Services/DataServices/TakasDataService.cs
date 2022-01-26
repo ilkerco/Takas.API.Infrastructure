@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Takas.Core.Model.Entities;
 using Takas.Core.Services.Interfaces;
 using Takas.WebApi.Dto;
+using Takas.WebApi.Models;
 using Takas.WebApi.Services.Interfaces;
 
 namespace Takas.WebApi.Services.DataServices
@@ -22,13 +23,15 @@ namespace Takas.WebApi.Services.DataServices
         private readonly IMapper _mapper;
         private readonly IProductImageService _productImageService;
         private readonly ICategoryService _categoryService;
+        private readonly IChatService _chatService;
         public TakasDataService(
             IProductService productService,
             IUserService userService,
             IMapper mapper,
             UserManager<User> userManager,
             IProductImageService productImageService,
-            ICategoryService categoryService
+            ICategoryService categoryService,
+            IChatService chatService
             )
         {
             _productService = productService;
@@ -37,6 +40,7 @@ namespace Takas.WebApi.Services.DataServices
             _userManager = userManager;
             _productImageService = productImageService;
             _categoryService = categoryService;
+            _chatService = chatService;
         }
         public async Task<ProductResponse> AddProduct(AddProduct product)
         {
@@ -198,6 +202,50 @@ namespace Takas.WebApi.Services.DataServices
             }
 
             return null;
+        }
+
+        public async Task<List<ChatResponseModel>> GetChatsByUser()
+        {
+            try
+            {
+                var currentUserId = _userService.GetCurrentUser();
+                var usersAllChats = await _chatService.GetAll().Include(x=>x.Messages).Where(x => x.FromId == currentUserId || x.ToId == currentUserId).ToListAsync();
+                var _mappedData = _mapper.Map<List<ChatResponseModel>>(usersAllChats);
+                return _mappedData;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ChatResponseModel> GetSingleChat(int targetProductId)
+        {
+            try
+            {
+                var currentUserId = _userService.GetCurrentUser();
+                var usersAllChats = await _chatService.GetAll().Include(x => x.Messages).Where(x => (x.FromId == currentUserId || x.ToId==currentUserId) && x.TargetProductId == targetProductId).FirstOrDefaultAsync();
+                var _mappedData = _mapper.Map<ChatResponseModel>(usersAllChats);
+                return _mappedData;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ProductResponse> GetProduct(int id)
+        {
+            try
+            {
+                var entities = await _productService.GetAll().Include(x => x.Images).Include(x => x.Owner).Include(x => x.Category).Where(x=>x.Id==id).FirstOrDefaultAsync();
+                var mappedModel = _mapper.Map<ProductResponse>(entities);
+                return mappedModel;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

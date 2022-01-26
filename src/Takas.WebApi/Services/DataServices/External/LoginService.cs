@@ -31,6 +31,41 @@ namespace Takas.WebApi.Services.DataServices.External
             _googleAuthService = googleAuthService;
             _authHelper = authHelper;
         }
+
+        public async Task<AuthenticationResult> LoginWithEmailAndPassword(LoginWithEmailRequest request)
+        {
+            try
+            {
+                var user = await _userManager.FindByEmailAsync(request.Email);
+                if(user == null)
+                {
+                    return new AuthenticationResult
+                    {
+                        Errors = new[] { "Kullanıcı bulunamadı." },
+                        Success = false
+                    };
+                }
+                else
+                {
+                    return new AuthenticationResult
+                    {
+                        Success = true,
+                        Token = _authHelper.GenerateJwtToken(user).Result
+                    };
+                }
+
+            }
+            catch(Exception ex)
+            {
+                return new AuthenticationResult
+                {
+                    Errors = new[] { ex.Message },
+                    Success = false,
+
+                };
+            }
+        }
+
         public async Task<AuthenticationResult> LoginWithFacebookAsync(SocialLoginRequest request)
         {
             var userInfofb = await _facebookAuthService.GetUserInfoAsync(request.accessToken);

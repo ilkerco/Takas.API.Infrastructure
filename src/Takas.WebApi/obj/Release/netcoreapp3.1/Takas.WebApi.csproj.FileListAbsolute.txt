@@ -66,7 +66,6 @@ C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\bin\Releas
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\bin\Release\netcoreapp3.1\Takas.Infrastructure.dll
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\bin\Release\netcoreapp3.1\Takas.Infrastructure.pdb
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\bin\Release\netcoreapp3.1\Takas.Core.pdb
-C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.csprojAssemblyReference.cache
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.AssemblyInfoInputs.cache
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.AssemblyInfo.cs
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.csproj.CoreCompileInputs.cache
@@ -80,3 +79,16 @@ C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Releas
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.dll
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.pdb
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.genruntimeconfig.cache
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\bin\Release\netcoreapp3.1\Takas.WebApi.Views.dll
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\bin\Release\netcoreapp3.1\Takas.WebApi.Views.pdb
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\bin\Release\netcoreapp3.1\SendGrid.dll
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.csproj.AssemblyReference.cache
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.RazorAssemblyInfo.cache
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.RazorAssemblyInfo.cs
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.TagHelpers.input.cache
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.TagHelpers.output.cache
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.RazorCoreGenerate.cache
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Razor\Pages\ResetPassword.cshtml.g.cs
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.RazorTargetAssemblyInfo.cs
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\Takas.WebApi.Views.pdb

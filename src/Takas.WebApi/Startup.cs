@@ -40,6 +40,7 @@ namespace Takas.WebApi
         {
             services.AddCors();
             services.AddControllers();
+            services.AddRazorPages();
             services.AddHttpClient();
             
             services.AddSwaggerGen(options =>
@@ -81,13 +82,16 @@ namespace Takas.WebApi
             services.AddAutoMapper(typeof(Startup));
             services.AddIdentityCore<User>(opt =>
             {
-                opt.Password.RequireDigit = false;
-                opt.Password.RequiredLength = 5;
-            }).AddEntityFrameworkStores<TakasDbContext>().AddSignInManager<SignInManager<User>>();
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequiredLength = 6;
+            }).AddEntityFrameworkStores<TakasDbContext>().AddDefaultTokenProviders().AddSignInManager<SignInManager<User>>();
             services.TryAddScoped<UserManager<User>>();
             services.TryAddScoped<SignInManager<User>>();
             services.AddDbContext<TakasDbContext>(options =>
-                options.UseSqlServer("Server = 45.158.14.59; Database = TakasDB; User ID = ilker8118; Password = i.S07051997352435; MultipleActiveResultSets = True"));
+                options.UseSqlServer("Server = 45.200.120.200; Database = TakasDb; User ID = ilker8118; Password = i.S07051997352435; MultipleActiveResultSets = True"));
              //options.UseSqlServer("Server=DESKTOP-12403TV\\SQLEXPRESS;Database=Takas;Trusted_Connection=True;MultipleActiveResultSets=true"));
             
             services.TryAddSingleton<ISystemClock, SystemClock>();
@@ -112,6 +116,7 @@ namespace Takas.WebApi
 
             var builder = new ContainerBuilder();
 
+            builder.RegisterType<SendGridMailService>().As<IMailService>();
             builder.RegisterType<AuthHelper>().As<IAuthHelper>();
             builder.RegisterType<ProductService>().As<IProductService>();
             builder.RegisterType<UserService>().As<IUserService>();
@@ -147,7 +152,10 @@ namespace Takas.WebApi
             app.UseAuthentication();
             app.UseRouting();
             app.UseAuthorization();
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints => {
+                endpoints.MapRazorPages();
+                endpoints.MapControllers(); 
+            });
             app.UseSignalR(routes =>
             {
                 routes.MapHub<ChatHub>("/chatHub");

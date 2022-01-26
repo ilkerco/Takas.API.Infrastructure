@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Takas.Core.Model.Entities;
 using Takas.WebApi.Dto;
+using Takas.WebApi.Models;
 
 namespace Takas.WebApi.Helpers
 {
@@ -24,6 +25,9 @@ namespace Takas.WebApi.Helpers
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt.ToString()))
                 .ForMember(dest => dest.Latitude, opt => opt.MapFrom(src => src.Owner.Latitude))
                 .ForMember(dest => dest.Longitude, opt => opt.MapFrom(src => src.Owner.Longitude));
+            CreateMap<Chat, ChatResponseModel>()
+                .ForMember(dest => dest.Messages, opt => opt.MapFrom(src => src.Messages.Select(x=> new {x.Timestamp,x.Text,x.Name })))
+                 ;
         }
     }
 }

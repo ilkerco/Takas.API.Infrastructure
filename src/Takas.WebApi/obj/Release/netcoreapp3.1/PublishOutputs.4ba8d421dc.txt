@@ -1,12 +1,19 @@
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Takas.WebApi.exe
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\2b2a57f1-c5b8-460f-bffa-0bf4d8ba9a8a.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\2e4dfffb-f366-49aa-b20e-acafb695adfd.png
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\30316c15-6753-4f79-b6b1-be8381179e18.png
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\3d0803a5-7d81-4cdd-bfdd-7fa03226969a.png
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\55e3b9df-be81-4d20-a5a4-6c0a0783c213.jpg
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\5b871a37-5a73-4063-84f8-27e061313979.jpg
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\6033a0c2-d5ee-40da-88f8-b7c68e0d41ff.jpg
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\60f6f221-c807-4fbb-83a3-bbf9df3d4640.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\80c7c149-0217-4e4c-a908-ed3bb84f302d.png
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\86558b3c-98f1-42a7-a5fa-f43473dfde7c.jpg
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\a759d8e0-7dbc-4e6f-909d-687f1e9e018f.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\ba7665ea-d9f2-4fd6-ad8d-3e26f35c10ec.png
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\c877828e-3861-4cc5-a68d-87494545ede8.jpg
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\d7a7621e-aca9-4dd0-bd82-91dd05999253.jpg
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\f6129249-a823-4ba9-bd9d-724024cb58f7.png
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\fbc05850-a827-4e5a-af0f-17a702445484.png
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\fcf96a0e-3ae0-45ab-b3f7-21c2b65f8b9a.jpg
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
@@ -46,6 +53,7 @@ C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Releas
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\SendGrid.dll
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -72,4 +80,6 @@ C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Releas
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Takas.Infrastructure.dll
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Takas.Infrastructure.pdb
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Takas.Core.pdb
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Takas.WebApi.Views.dll
+C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Takas.WebApi.Views.pdb
 C:\Users\ilker\source\repos\Takas.API.Infrastructure\src\Takas.WebApi\obj\Release\netcoreapp3.1\PubTmp\Out\Takas.WebApi.deps.json
